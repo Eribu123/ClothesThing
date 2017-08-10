@@ -34,3 +34,6 @@ def login():
                            title='Sign In',
                            form=form,
                            providers=app.config['OPENID_PROVIDERS'])
+@app.route('/upload' , methods=['GET', 'POST'])
+def upload():
+    
