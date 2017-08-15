@@ -1,4 +1,4 @@
-import matplotlib.pyplot as plt
+#import matplotlib.pyplot as plt
 # import skimage
 # from sklearn import datasets
 from sklearn import svm
@@ -12,7 +12,7 @@ from sklearn.model_selection import train_test_split
 from sklearn.cluster import KMeans
 from collections import Counter
 # from sklearn import model_selection
-import waterShedTest 
+import waterShedTest
 from sklearn.model_selection import GridSearchCV
 import pickle
 shirtPath='Users/Aubrey/Desktop/clothes/Shirts'
@@ -28,7 +28,7 @@ pantsPath='../../clothes/pants/'
 grayPathShirt=shirtPath+"ResizedShirts/GrayShirts/"
 grayPathPants=pantsPath+"ResizedPants/GrayPants/"
 # desktop='../../'
-numericData=[]	
+numericData=[]
 p=[]
 mostusedColors=[]
 
@@ -39,7 +39,7 @@ def ResizeFolderOfImages(path,savePath):
 	for x,y,z in os.walk(path):
 		for i in range(0,len(z)):
 			if z[i] =='.DS_Store':
-				continue 
+				continue
 			# print z[i]
 			s= Image.open(path +z[i], 'r')
 			s.load()
@@ -59,7 +59,7 @@ def GrayOut(path,finalPath):
 	for x,y,z in os.walk(path):
 		for i in range(0,len(z)):
 			if z[i] =='.DS_Store':
-				continue 
+				continue
 			a=Image.open(path +z[i], 'r')
 			# print 'fds'
 			a=ImageOps.grayscale(a)
@@ -94,7 +94,7 @@ def CreateClassifer(shirtPath,pantsPath):
 
 	z=pantsAr+shirtsAr #turns all the arrays into array
 	# print z
-	for i in range(0,len(z)):		
+	for i in range(0,len(z)):
 		z[i]= np.reshape(z[i],(1,z[i].shape[0]*z[i].shape[1])) #reshapes the array for use
 		for j in range(0,len(z[i])):
 			z[i]= z[i][j]
@@ -113,13 +113,13 @@ def CreateClassifer(shirtPath,pantsPath):
 
 
 
-	
+
 	clf = GridSearchCV(svm.SVC(C=1), param_grid, cv=5)
 
 	clf.fit(X_train, y_train)
 
 
-	#SVC creates a vector that will normally will creates a line of best fit. 
+	#SVC creates a vector that will normally will creates a line of best fit.
 	#But were using it to fit a line that fits around alll of the given plotted points.
 	clf.fit(X_train,y_train)
 	np.reshape(X_test,(-1,1))
@@ -127,12 +127,12 @@ def CreateClassifer(shirtPath,pantsPath):
 	# print(y_test)
 
 	# print clf.score(X_test,y_test)
-	
+
 	return clf
 
 #READIES THE ITEMS FOR THE CLASSIFER
 def read_item_files(path,labels,Ar):
-	x=[]; y=[]; 
+	x=[]; y=[];
 
 	for x,y,z in os.walk(path):
 		x=z[1:]
@@ -168,9 +168,9 @@ def Cluster(Input):
 
 	n_clusters= len(np.unique(labels))
 
-	a=Counter(labels) #creates a dictionary of the colors most used 
+	a=Counter(labels) #creates a dictionary of the colors most used
 	# print centroids
-	# print a[0], centroids[0] 
+	# print a[0], centroids[0]
 	# print 'number of estimated clusters',n_clusters
 
 	theColors=[]
@@ -188,7 +188,7 @@ def Cluster(Input):
 pathToClassifer='classifier.pkl'
 def SaveClassifer(path):
 	with open(path, 'wb+') as fid:
-		pickle.dump(CreateClassifer(grayPathShirt,grayPathPants), fid)   
+		pickle.dump(CreateClassifer(grayPathShirt,grayPathPants), fid)
 
 # SaveClassifer(pathToClassifer)
 def classify(Input):
@@ -209,4 +209,3 @@ def Score(Input):
 	colorsAre=Cluster(Input)
 	# print 'scoring',itemIs, colorsAre
 	return [itemIs, colorsAre]
-
