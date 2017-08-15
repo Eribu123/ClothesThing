@@ -22,7 +22,7 @@ install_secret_key(app, filename='secret_key')
 def allowed_file(filename):
     return '.' in filename and \
         filename.rsplit('.', 1)[1].lower() in ALLOWED_EXTENSIONS
-@app.route('/upload', methods=['GET', 'POST']
+@app.route('/upload', methods=['GET', 'POST'])
 def upload_file():
     if request.method == 'POST':
         # check if the post request has the file part
@@ -40,7 +40,7 @@ def upload_file():
             filename = secure_filename(file.filename)
                 file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
                 return redirect(url_for('uploaded_file', filename=filename))
-           
+
     return '''
     <!doctype html>
     <title>Upload new File</title>
@@ -101,7 +101,7 @@ def login():
 @app.route('/data', methods=['GET', 'POST', 'PUT', 'PATCH', 'DELETE'])
 def data():
     return render_template('data.html')
-           
-           
+
+
 if __name__ == "__main__":
 app.run(debug=True)
