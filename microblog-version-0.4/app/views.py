@@ -4,7 +4,7 @@ from flask import Flask, flash,  request, redirect, url_for, send_from_directory
 from app import app
 from .forms import LoginForm
 from werkzeug.utils import secure_filename
-from wikifuncs import *
+
 
 UPLOAD_FOLDER = './uploads'
 ALLOWED_EXTENSIONS = set(['txt', 'pdf', 'png', 'jpg', 'jpeg', 'gif'])
