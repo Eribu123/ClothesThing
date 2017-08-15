@@ -1,6 +1,6 @@
 import os
 import sys
-from flask import Flask, flash,  request, redirect, url_for, send_from_directory
+from flask import Flask, flash,  request, redirect, url_for, send_from_directory, render_template
 from app import app
 from .forms import LoginForm
 from werkzeug.utils import secure_filename
