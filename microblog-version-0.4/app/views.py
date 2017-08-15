@@ -100,7 +100,7 @@ def login():
                            providers=app.config['OPENID_PROVIDERS'])
 @app.route('/data', methods=['GET', 'POST', 'PUT', 'PATCH', 'DELETE'])
 def test():
-    DT.DataTracking.InputData('ex1','/Users/kyle/Desktop/image1.jpeg',SepAl.classify(Image.open('/Users/kyle/Desktop/image1.jpeg'))
+    DT.DataTracking.InputData('ex1','/Users/kyle/Desktop/image1.jpeg',SepAl.classify(Image.open('/Users/kyle/Desktop/image1.jpeg')))
 
 
 if __name__ == "__main__":
