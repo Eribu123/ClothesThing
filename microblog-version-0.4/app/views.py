@@ -102,6 +102,14 @@ def login():
 def test():
     DT.DataTracking.InputData('ex1','/Users/kyle/Desktop/image1.jpeg',SepAl.classify(Image.open('/Users/kyle/Desktop/image1.jpeg')))
 
+@app.route('/get', methods=['POST'])
+def get():
+    username=request.form['username']
+    path=request.form['path']
+    DT.DataTracking.InputData(username,path,SepAl.classify(Image.open(path))[0])
+
+    
+
 
 if __name__ == "__main__":
     app.run(debug=True)
