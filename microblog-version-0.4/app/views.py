@@ -57,12 +57,13 @@ def upload_file():
 
 @app.route('/uploads/<filename>')
 def uploaded_file(filename):
-        return
-        '''
-        <!doctype html>
-        <title>Uploaded</title>
-        <h1>Uploaded</h1>
-        '''
+    pass
+    
+    return '''
+    <!doctype html>
+    <title>Uploaded</title>
+    <h1>Uploaded</h1>
+    '''
 
 
 @app.route('/')
