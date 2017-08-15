@@ -38,8 +38,8 @@ def upload_file():
             return redirect(request.url)
         elif file and allowed_file(file.filename):
             filename = secure_filename(file.filename)
-                file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
-                return redirect(url_for('uploaded_file', filename=filename))
+            file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
+            return redirect(url_for('uploaded_file', filename=filename))
 
     return '''
     <!doctype html>
@@ -56,15 +56,15 @@ def uploaded_file(filename):
         try:
            inread(os.path.join(app.config['UPLOAD_FOLDER'], filename))
            with open('output.txt', 'w+') as z:
-            z.write(out())
-            os.remove(os.path.join(app.config['UPLOAD_FOLDER'], filename))
+               z.write(out())
+               os.remove(os.path.join(app.config['UPLOAD_FOLDER'], filename))
         except UnicodeDecodeError:
            pass
         return '''
-               <!doctype html>
-               <title>Uploaded</title>
-               <h1>Uploaded</h1>
-               '''
+        <!doctype html>
+        <title>Uploaded</title>
+        <h1>Uploaded</h1>
+        '''
 
 
 
