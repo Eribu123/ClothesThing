@@ -1,4 +1,4 @@
-#import matplotlib.pyplot as plt
+
 # import skimage
 # from sklearn import datasets
 from sklearn import svm
