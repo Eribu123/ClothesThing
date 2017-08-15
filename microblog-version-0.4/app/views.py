@@ -4,7 +4,8 @@ from flask import Flask, flash,  request, redirect, url_for, send_from_directory
 from app import app
 from .forms import LoginForm
 from werkzeug.utils import secure_filename
-
+import DataTracking as DT
+import seperatationAl as SepAl
 
 UPLOAD_FOLDER = './uploads'
 ALLOWED_EXTENSIONS = set(['txt', 'pdf', 'png', 'jpg', 'jpeg', 'gif'])
@@ -58,7 +59,7 @@ def upload_file():
 @app.route('/uploads/<filename>')
 def uploaded_file(filename):
     pass
-    
+
     return '''
     <!doctype html>
     <title>Uploaded</title>
@@ -98,8 +99,8 @@ def login():
                            form=form,
                            providers=app.config['OPENID_PROVIDERS'])
 @app.route('/data', methods=['GET', 'POST', 'PUT', 'PATCH', 'DELETE'])
-def data():
-    return render_template('data.html')
+def test():
+    DT.DataTracking.InputData('ex1','/Users/kyle/Desktop/image1.jpeg',SepAl.classify(Image.open('/Users/kyle/Desktop/image1.jpeg'))
 
 
 if __name__ == "__main__":
