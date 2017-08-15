@@ -71,7 +71,7 @@ def uploaded_file(filename):
         '''
 
 
-
+@app.route('/')
 @app.route('/index')
 def index():
     user = {'nickname': 'Miguel'}
