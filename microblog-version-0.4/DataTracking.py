@@ -103,9 +103,9 @@ def ReadData(ThisUser,UInput):
 # InputData('ex5',Spath1,SepAl.classify(Image.open(Spath1))[0])
 # InputData('ex5',Ppath1,SepAl.classify(Image.open(Ppath1))[0])
 
-ReadData('ex1',Spath5)
+#ReadData('ex1',Spath5)
 
-print SepAl.classify(Image.open(Spath5))
+#print SepAl.classify(Image.open(Spath5))
 
 conn.close()
 # c.execute("INSERT INTO UserInputTable (id, user, , imgPath, type )VALUE(0,'admin', 'test@gmail.com', 'path','-1' ) ")
