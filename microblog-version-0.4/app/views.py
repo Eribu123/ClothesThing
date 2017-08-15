@@ -57,13 +57,6 @@ def upload_file():
 
 @app.route('/uploads/<filename>')
 def uploaded_file(filename):
-        try:
-           inread(os.path.join(app.config['UPLOAD_FOLDER'], filename))
-           with open('output.txt', 'w+') as z:
-               z.write(out())
-               os.remove(os.path.join(app.config['UPLOAD_FOLDER'], filename))
-        except UnicodeDecodeError:
-           pass
         return '''
         <!doctype html>
         <title>Uploaded</title>
