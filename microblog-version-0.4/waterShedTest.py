@@ -1,22 +1,15 @@
 import numpy as np
 import cv2
-from matplotlib import pyplot as plt
 from PIL import Image
 # path = '/Users/Aubrey/Desktop/clothes/Shirts/ResizedShirts/testShirt.jpg'
 def Watershed(Input):
 	data = Input
-	# plt.imshow(a)
-	# plt.show()
 	img = cv2.imread(Input)
 	# print img
 	img = cv2.GaussianBlur(img,(5,5),0)
-	plt.imshow(img)
-	# plt.show() 
 	# print img
 	gray = cv2.cvtColor(img,cv2.COLOR_BGR2GRAY)
 	# gray= 255-gray
-	plt.imshow(gray)
-	# plt.show()
 	ret, thresh = cv2.threshold(gray,0,255,cv2.THRESH_BINARY_INV+cv2.THRESH_OTSU)
 	# noise removal
 	kernel = np.ones((3,3),np.uint8)
@@ -31,17 +24,11 @@ def Watershed(Input):
 	sure_fg = np.uint8(sure_fg)
 	unknown = cv2.subtract(sure_bg,sure_fg)
 	# a=cv2.subtract(a,sure_bg)
-	# plt.imshow(a)
-	# plt.show()
 	# Marker labelling
 	ret, markers = cv2.connectedComponents(sure_fg)
 
-	# plt.imshow(sure_fg)
-	# plt.show()
 	# print 'forground'
-	# plt.imshow(sure_bg)
 	# print 'background'
-	# plt.show()
 	# Add one to all labels so that sure background is not 0, but 1
 	markers = markers+1
 	# Now, mark the region of unknown with zero
@@ -50,7 +37,5 @@ def Watershed(Input):
 	markers = cv2.watershed(img,markers)
 	#Marks the boundaries 
 	img[markers == -1] = [255,0,0]
-	plt.imshow(img)
-	# plt.show()
 
 	return markers
