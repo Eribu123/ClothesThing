@@ -62,7 +62,7 @@ def upload_file():
         print 'o'
         
         print(username, path)
-        # DT.InputData(username,path,SepAl.classify(path))
+        DT.InputData(username,path,SepAl.classify(path))
     return '''
     <!doctype html>
     <title>Upload new File</title>
