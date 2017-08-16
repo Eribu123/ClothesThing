@@ -53,7 +53,6 @@ def upload_file():
             filename = secure_filename(file.filename)
             file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
             print 'oijadsfoiasdfioasdiopfasdiofjs'
-            return
             # return redirect(url_for('uploaded_file', filename=filename))
 
         print 'oijadsfoiasdfioasdiopfasdiofjs'
