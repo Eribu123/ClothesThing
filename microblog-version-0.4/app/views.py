@@ -12,10 +12,8 @@ UPLOAD_FOLDER = './uploads'
 ALLOWED_EXTENSIONS = set(['txt', 'pdf', 'png', 'jpg', 'jpeg', 'gif'])
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 @app.route('/get',methods= ['POST'])
-def getRoute():
-    pass
-Afile =None
-AfileName=''
+# def getRoute():
+    
 
 def install_secret_key(app, filename='secret_key'):
     filename = os.path.join(app.instance_path, filename)
@@ -51,12 +49,11 @@ def upload_file():
             flash('No selected file')
             return redirect(request.url)
         elif file and allowed_file(file.filename):
-            AfileName = secure_filename(file.filename)
-            Afile=file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
-            # return redirect(url_for('uploaded_file', filename=filename))
-            return
-        username=request.form['username']
-        path="/home/ubuntu/ClothesThing/microblog-version-0.4/uploads/"+request.form['fname']
+            filename = secure_filename(file.filename)
+            file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
+            return redirect(url_for('uploaded_file', filename=filename))
+        username=request.form.get['username']
+        path="/home/ubuntu/ClothesThing/microblog-version-0.4/uploads/"+request.form.get['fname']
         print(username, path)
         # DT.InputData(username,path,SepAl.classify(path))
     return '''
@@ -78,11 +75,11 @@ def upload_file():
 def uploaded_file(filename):
     pass
 
-    # return '''
-    # <!doctype html>
-    # <title>Uploaded</title>
-    # <h1>Uploaded</h1>
-    # '''
+    return '''
+    <!doctype html>
+    <title>Uploaded</title>
+    <h1>Uploaded</h1>
+    '''
 
 
 @app.route('/')
