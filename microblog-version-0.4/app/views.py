@@ -13,10 +13,7 @@ ALLOWED_EXTENSIONS = set(['txt', 'pdf', 'png', 'jpg', 'jpeg', 'gif'])
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 @app.route('/get',methods= ['POST'])
 # def getRoute():
-#     username=request.form['username']
-#     path=request.form['fpath']+'/'+request.form['fname']
-#     print(username, path)
-#     DT.InputData(username,path,SepAl.classify(path))
+    
 
 def install_secret_key(app, filename='secret_key'):
     filename = os.path.join(app.instance_path, filename)
@@ -38,6 +35,7 @@ def allowed_file(filename):
 def upload_file():
     if request.method == 'POST':
        
+       
         # check if the post request has the file part
         print (request.files)
         if 'file' not in request.files:
@@ -53,7 +51,10 @@ def upload_file():
             filename = secure_filename(file.filename)
             file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
             return redirect(url_for('uploaded_file', filename=filename))
-
+        username=request.form['username']
+        path="/home/ubuntu/ClothesThing/microblog-version-0.4/uploads/"+request.form['fname']
+        print(username, path)
+        # DT.InputData(username,path,SepAl.classify(path))
     return '''
     <!doctype html>
     <title>Upload new File</title>
