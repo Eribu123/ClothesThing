@@ -38,6 +38,7 @@ def upload_file():
        
         # check if the post request has the file part
         print (request.files)
+        print 'oisdjsadfilnfsd'
         if 'file' not in request.files:
             flash('No file part')
             return redirect(request.url)
