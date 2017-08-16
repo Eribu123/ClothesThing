@@ -15,27 +15,27 @@ def definec():
 	c=conn.cursor()
 	return c, conn
 # numberToIncrement = 0ResizedShirts ResizedPants
-Spath1 = '/Users/Aubrey/Desktop/clothes/Shirts/ResizedShirts/TestShirt1.jpg'
+# Spath1 = '/Users/Aubrey/Desktop/clothes/Shirts/ResizedShirts/TestShirt1.jpg'
 
-Ppath1='/Users/Aubrey/Desktop/clothes/pants/ResizedPants/TestPants1.jpg'
+# Ppath1='/Users/Aubrey/Desktop/clothes/pants/ResizedPants/TestPants1.jpg'
 
-Spath2 = '/Users/Aubrey/Desktop/clothes/Shirts/ResizedShirts/TestShirt2.jpg'
+# Spath2 = '/Users/Aubrey/Desktop/clothes/Shirts/ResizedShirts/TestShirt2.jpg'
 
-Ppath2='/Users/Aubrey/Desktop/clothes/pants/ResizedPants/TestPants2.jpg'
+# Ppath2='/Users/Aubrey/Desktop/clothes/pants/ResizedPants/TestPants2.jpg'
 
-Spath3 = '/Users/Aubrey/Desktop/clothes/Shirts/ResizedShirts/TestShirt3.jpg'
+# Spath3 = '/Users/Aubrey/Desktop/clothes/Shirts/ResizedShirts/TestShirt3.jpg'
 
-Ppath3='/Users/Aubrey/Desktop/clothes/pants/ResizedPants/TestPants3.jpg'
+# Ppath3='/Users/Aubrey/Desktop/clothes/pants/ResizedPants/TestPants3.jpg'
 
-Spath4 = '/Users/Aubrey/Desktop/clothes/Shirts/ResizedShirts/TestShirt4.jpg'
+# Spath4 = '/Users/Aubrey/Desktop/clothes/Shirts/ResizedShirts/TestShirt4.jpg'
 
-Ppath4='/Users/Aubrey/Desktop/clothes/pants/ResizedPants/TestPants4.jpg'
+# Ppath4='/Users/Aubrey/Desktop/clothes/pants/ResizedPants/TestPants4.jpg'
 
-Spath5 = '/Users/Aubrey/Desktop/clothes/Shirts/ResizedShirts/TestShirt5.jpg'
+# Spath5 = '/Users/Aubrey/Desktop/clothes/Shirts/ResizedShirts/TestShirt5.jpg'
 
-Ppath5='/Users/Aubrey/Desktop/clothes/pants/ResizedPants/TestPants5.jpg'
+# Ppath5='/Users/Aubrey/Desktop/clothes/pants/ResizedPants/TestPants5.jpg'
 
-score=0
+# score=0
 
 def AddToUserInputData(ThisUser,Uinput,Utype): #These are what were going to be getting from front end everytime the usr uses the product
 	# score=0 
@@ -44,10 +44,7 @@ def AddToUserInputData(ThisUser,Uinput,Utype): #These are what were going to be 
 	c.execute("CREATE TABLE IF NOT EXISTS UserInputTable(id Integer PRIMARY KEY, usr Text, Input Text ,ClotheType Integer)")
 	c.execute("INSERT INTO UserInputTable (usr,Input,ClotheType) VALUES (?,?,?)", (ThisUser,Uinput,Utype))
 
-	c.execute("SELECT Input from UserInputTable")
-
-	for  i in c.fetchall():
-		pass
+	
 	c.execute("CREATE TABLE IF NOT EXISTS ScoreTable(id Integer PRIMARY KEY, UserName Text, Input1 Text, Input2 Text ,Score Integer)" )
 
 	c.execute("SELECT Input from UserInputTable where usr=(?)", (ThisUser,))
@@ -57,7 +54,7 @@ def AddToUserInputData(ThisUser,Uinput,Utype): #These are what were going to be 
 	z=0
 	for row in c.fetchall():
 		x+=1
-		# print 'x',x
+		print 'x',x
 		# print '\n',row[0],ThisUser,'\n'
 		print row[0]
 		if row[0]  != None:
