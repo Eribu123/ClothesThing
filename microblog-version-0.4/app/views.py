@@ -59,6 +59,8 @@ def upload_file():
         time.sleep(2)
         username=request.form.get['username']
         path="/home/ubuntu/ClothesThing/microblog-version-0.4/uploads/"+request.form.get['fname']
+        print 'o'
+        
         print(username, path)
         # DT.InputData(username,path,SepAl.classify(path))
     return '''
