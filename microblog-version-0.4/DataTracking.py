@@ -8,10 +8,12 @@ from PIL import Image
 import warnings
 # warnings.filterwarnings("ignore", category=DeprecationWarning) 
 # print 'asodfausdfaiosudhfuoasdhfuisdahuilasdfhui'
-conn=sqlite3.connect('DataBase123.db')
-sqlite3.connect(":memory:", check_same_thread=True)
+def definec():
+	conn=sqlite3.connect('DataBase123.db')
+	sqlite3.connect(":memory:", check_same_thread=True)
 
-c=conn.cursor()
+	c=conn.cursor()
+	return c
 # numberToIncrement = 0ResizedShirts ResizedPants
 Spath1 = '/Users/Aubrey/Desktop/clothes/Shirts/ResizedShirts/TestShirt1.jpg'
 
@@ -38,7 +40,7 @@ score=0
 def AddToUserInputData(ThisUser,Uinput,Utype): #These are what were going to be getting from front end everytime the usr uses the product
 	# score=0 
 	# print _input
-
+	c = definec()
 	c.execute("CREATE TABLE IF NOT EXISTS UserInputTable(id Integer PRIMARY KEY, usr Text, Input Text ,ClotheType Integer)")
 	c.execute("INSERT INTO UserInputTable (usr,Input,ClotheType) VALUES (?,?,?)", (ThisUser,Uinput,Utype))
 
@@ -89,6 +91,7 @@ def InputData(user,Input,Utype):
 	AddToUserInputData(user,Input,Utype)
 
 def ReadData(ThisUser,UInput):
+	c = definec()
 	c.execute("SELECT UserName, Input1, Input2, Score from ScoreTable where  UserName =? and  Input1 =? or Input2=?", (ThisUser,UInput,UInput))
 	for i in c.fetchall():
 		print i
