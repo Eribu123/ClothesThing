@@ -107,7 +107,7 @@ def get():
     username=request.form['username']
     path=request.form['fpath']+'/'+request.form['fname']
     print(username, path)
-    DT.DataTracking.InputData(username,path,SepAl.classify(Image.open(path))[0])
+    #DT.DataTracking.InputData(username,path,SepAl.classify(Image.open(path))[0])
 
     
 
