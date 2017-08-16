@@ -197,7 +197,10 @@ def classify(Input):
 	Input=ImageOps.grayscale(Input)
 	Input = StandarizeImage(Input)
 	Input = np.array(Input)
+	print Input
+	print 1
 	Input = np.reshape(Input,(Input.shape[0]*Input.shape[1]))
+	print Input
 	# print('prediction', clf.predict (Input))
 	return clf.predict(Input)
 	# print(y_test)
