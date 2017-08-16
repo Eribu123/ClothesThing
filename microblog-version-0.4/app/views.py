@@ -64,6 +64,7 @@ def upload_file():
     <form method=post enctype=multipart/form-data>
         <p><input type=file name=file>
             <input type=submit value=Upload>
+    </form>
     <form>
   Name: <input type="text" name="name" id="name" value="" />
     <input type="submit" value="submit" />
@@ -71,14 +72,14 @@ def upload_file():
     '''
 
 @app.route('/uploads/<filename>')
-def uploaded_file(filename):
-    pass
+# def uploaded_file(filename):
+#     pass
 
-    return '''
-    <!doctype html>
-    <title>Uploaded</title>
-    <h1>Uploaded</h1>
-    '''
+#     return '''
+#     <!doctype html>
+#     <title>Uploaded</title>
+#     <h1>Uploaded</h1>
+#     '''
 
 
 @app.route('/')
