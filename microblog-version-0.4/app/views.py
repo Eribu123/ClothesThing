@@ -11,7 +11,7 @@ from PIL import Image
 UPLOAD_FOLDER = './uploads'
 ALLOWED_EXTENSIONS = set(['txt', 'pdf', 'png', 'jpg', 'jpeg', 'gif'])
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
-@app.route('/get',methods= ['POST']):
+@app.route('/get',methods= ['POST'])
     def getRoute():
         username=request.form['username']
         path=request.form['fpath']+'/'+request.form['fname']
