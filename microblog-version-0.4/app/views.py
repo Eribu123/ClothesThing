@@ -33,8 +33,8 @@ def upload_file():
     if request.method == 'POST':
         username=str(request.form['username'])
         path=str(request.form['fpath']+'/'+request.form['fname'])
-        print('dsf', 'fds')
-        DT.InputData(username,path,0)
+        print(username, path)
+        DT.InputData('username','path',0)
         # check if the post request has the file part
         print (request.files)
         if 'file' not in request.files:
