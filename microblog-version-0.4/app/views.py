@@ -31,6 +31,10 @@ def allowed_file(filename):
 @app.route('/upload', methods=['GET', 'POST'])
 def upload_file():
     if request.method == 'POST':
+        username=request.form['username']
+        path=request.form['fpath']+'/'+request.form['fname']
+        print(username, path)
+        DT.InputData(username,path,SepAl.classify(Image.open(path))[0])
         # check if the post request has the file part
         print (request.files)
         if 'file' not in request.files:
@@ -103,12 +107,6 @@ def login():
 def test():
     DT.InputData('ex1','/Users/kyle/Desktop/image1.jpeg',SepAl.classify(Image.open('/Users/kyle/Desktop/image1.jpeg')))
 
-@app.route('/get', methods=['POST'])
-def get():
-    username=request.form['username']
-    path=request.form['fpath']+'/'+request.form['fname']
-    print(username, path)
-    DT.InputData(username,path,SepAl.classify(Image.open(path))[0])
 
     
 
