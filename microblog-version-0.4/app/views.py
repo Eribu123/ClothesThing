@@ -6,6 +6,7 @@ from .forms import LoginForm
 from werkzeug.utils import secure_filename
 import DataTracking as DT
 import SeperationAL as SepAl
+from PIL import Image
 
 UPLOAD_FOLDER = './uploads'
 ALLOWED_EXTENSIONS = set(['txt', 'pdf', 'png', 'jpg', 'jpeg', 'gif'])
