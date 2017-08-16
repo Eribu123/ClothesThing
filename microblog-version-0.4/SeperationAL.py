@@ -199,7 +199,7 @@ def classify(Input):
 	print np.shape(Input)
 	Input = np.array(Input)
 	print np.shape(Input)
-	Input = np.reshape(Input,(22500,0),(Input.shape[0]*Input.shape[1]))
+	Input = np.reshape(Input,(22500,1))
 	print np.shape(Input)
 	# print('prediction', clf.predict (Input))
 	return clf.predict(Input)
