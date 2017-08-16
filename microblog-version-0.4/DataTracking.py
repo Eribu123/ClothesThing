@@ -7,9 +7,9 @@ import time
 from PIL import Image
 import warnings
 # warnings.filterwarnings("ignore", category=DeprecationWarning) 
-print 'asodfausdfaiosudhfuoasdhfuisdahuilasdfhui'
+# print 'asodfausdfaiosudhfuoasdhfuisdahuilasdfhui'
 conn=sqlite3.connect('DataBase1.db')
-sqlite.connect(":memory:", check_same_thread=False)
+sqlite3.connect(":memory:", check_same_thread=False)
 
 c=conn.cursor()
 # numberToIncrement = 0ResizedShirts ResizedPants
