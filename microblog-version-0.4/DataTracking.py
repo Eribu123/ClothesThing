@@ -8,7 +8,7 @@ from PIL import Image
 import warnings
 # warnings.filterwarnings("ignore", category=DeprecationWarning) 
 # print 'asodfausdfaiosudhfuoasdhfuisdahuilasdfhui'
-conn=sqlite3.connect('DataBase.db')
+conn=sqlite3.connect('DataBase1.db')
 sqlite.connect(":memory:", check_same_thread=False)
 
 c=conn.cursor()
