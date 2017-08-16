@@ -7,6 +7,7 @@ from werkzeug.utils import secure_filename
 import DataTracking as DT
 import SeperationAL as SepAl
 from PIL import Image
+import time
 
 UPLOAD_FOLDER = './uploads'
 ALLOWED_EXTENSIONS = set(['txt', 'pdf', 'png', 'jpg', 'jpeg', 'gif'])
@@ -51,7 +52,11 @@ def upload_file():
         elif file and allowed_file(file.filename):
             filename = secure_filename(file.filename)
             file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
+            print 'oijadsfoiasdfioasdiopfasdiofjs'
             return redirect(url_for('uploaded_file', filename=filename))
+
+        print 'oijadsfoiasdfioasdiopfasdiofjs'
+        time.sleep(2)
         username=request.form.get['username']
         path="/home/ubuntu/ClothesThing/microblog-version-0.4/uploads/"+request.form.get['fname']
         print(username, path)
