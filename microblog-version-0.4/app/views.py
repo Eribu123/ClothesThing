@@ -12,11 +12,11 @@ UPLOAD_FOLDER = './uploads'
 ALLOWED_EXTENSIONS = set(['txt', 'pdf', 'png', 'jpg', 'jpeg', 'gif'])
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 @app.route('/get',methods= ['POST'])
-def getRoute():
-    username=request.form['username']
-    path=request.form['fpath']+'/'+request.form['fname']
-    print(username, path)
-    DT.InputData(username,path,SepAl.classify(path))
+# def getRoute():
+#     username=request.form['username']
+#     path=request.form['fpath']+'/'+request.form['fname']
+#     print(username, path)
+#     DT.InputData(username,path,SepAl.classify(path))
 
 def install_secret_key(app, filename='secret_key'):
     filename = os.path.join(app.instance_path, filename)
