@@ -57,8 +57,8 @@ def upload_file():
 
         print 'oijadsfoiasdfioasdiopfasdiofjs'
         time.sleep(2)
-        username=request.form.get['username']
-        path="/home/ubuntu/ClothesThing/microblog-version-0.4/uploads/"+request.form.get['fname']
+        username=request.form['username']
+        path="/home/ubuntu/ClothesThing/microblog-version-0.4/uploads/"+request.form['fname']
         print 'o'
         
         print(username, path)
