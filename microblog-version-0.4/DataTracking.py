@@ -9,6 +9,8 @@ import warnings
 # warnings.filterwarnings("ignore", category=DeprecationWarning) 
 # print 'asodfausdfaiosudhfuoasdhfuisdahuilasdfhui'
 conn=sqlite3.connect('DataBase.db')
+sqlite.connect(":memory:", check_same_thread=False)
+
 c=conn.cursor()
 # numberToIncrement = 0ResizedShirts ResizedPants
 Spath1 = '/Users/Aubrey/Desktop/clothes/Shirts/ResizedShirts/TestShirt1.jpg'
