@@ -95,10 +95,10 @@ def ReadData(ThisUser,UInput):
 
 
 # c.execute("DROP TABLE UserInputTable")
-InputData('ex1',Spath5,SepAl.classify(Image.open(Spath5))[0])
+# InputData('ex1',Spath5,SepAl.classify(Image.open(Spath5))[0])
 
-ReadData('ex1',Spath5)
-print 'dsfsd'
+# ReadData('ex1',Spath5)
+# print 'dsfsd'
 # InputData('ex1',Ppath5,SepAl.classify(Image.open(Ppath5))[0])
 # InputData('ex2',Spath4,SepAl.classify(Image.open(Spath4))[0])
 # InputData('ex2',Ppath4,SepAl.classify(Image.open(Ppath4))[0])
