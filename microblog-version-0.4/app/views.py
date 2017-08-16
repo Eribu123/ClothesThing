@@ -34,7 +34,7 @@ def upload_file():
         username=str(request.form['username'])
         path=str(request.form['fpath']+'/'+request.form['fname'])
         print(username, path)
-        DT.InputData('username','path',0)
+        DT.InputData(username,path,0)
         # check if the post request has the file part
         print (request.files)
         if 'file' not in request.files:
