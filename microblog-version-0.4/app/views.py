@@ -105,7 +105,7 @@ def test():
 @app.route('/get', methods=['POST'])
 def get():
     username=request.form['username']
-    path=request.form['path']
+    path=request.form['fpath']+'/'+request.form['fname']
     DT.DataTracking.InputData(username,path,SepAl.classify(Image.open(path))[0])
 
     
