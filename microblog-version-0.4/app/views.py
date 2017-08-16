@@ -31,8 +31,8 @@ def allowed_file(filename):
 @app.route('/upload', methods=['GET', 'POST'])
 def upload_file():
     if request.method == 'POST':
-        username=request.form['username']
-        path=request.form['fpath']+'/'+request.form['fname']
+        username=str(request.form['username'])
+        path=str(request.form['fpath']+'/'+request.form['fname'])
         print(username, path)
         DT.InputData(username,path,0)
         # check if the post request has the file part
