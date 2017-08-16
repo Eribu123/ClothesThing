@@ -32,9 +32,9 @@ def allowed_file(filename):
 def upload_file():
     if request.method == 'POST':
         username=str(request.form['username'])
-        path=str(request.form['fpath']+'/'+request.form['fname'])
+        path=str(request.form['fpath']+'/'+request.form['fname']+username)
         print(username, path)
-        DT.InputData(username,path,SepAl.classify(Image.open(path)))
+        DT.InputData(username,path,0)
         # check if the post request has the file part
         print (request.files)
         if 'file' not in request.files:
