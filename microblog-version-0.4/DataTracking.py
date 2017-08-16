@@ -94,6 +94,8 @@ def ReadData(ThisUser,UInput):
 	c.execute("SELECT UserName, Input1, Input2, Score from ScoreTable where  UserName =? and  Input1 =? or Input2=?", (ThisUser,UInput,UInput))
 	for i in c.fetchall():
 		print i
+	c.execute("SELECT id from UserInputTable where UserName =? and  Input=? ")(ThisUser,UInput)
+	return c.fetchone()
 	conn.close()
 
 # c.execute("DROP TABLE UserInputTable")
