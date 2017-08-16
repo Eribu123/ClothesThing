@@ -34,7 +34,7 @@ Spath5 = '/Users/Aubrey/Desktop/clothes/Shirts/ResizedShirts/TestShirt5.jpg'
 Ppath5='/Users/Aubrey/Desktop/clothes/pants/ResizedPants/TestPants5.jpg'
 
 score=0
-c.execute("CREATE TABLE Abc (I Integer)")
+
 def AddToUserInputData(ThisUser,Uinput,Utype): #These are what were going to be getting from front end everytime the usr uses the product
 	# score=0 
 	# print _input
