@@ -196,11 +196,11 @@ def classify(Input):
 		clf=pickle.load(fid)
 	Input=ImageOps.grayscale(Input)
 	Input = StandarizeImage(Input)
-	print Input.shape
+	print np.shape(Input)
 	Input = np.array(Input)
-	print Input.shape
+	print np.shape(Input)
 	Input = np.reshape(Input,(Input.shape[0]*Input.shape[1]))
-	print Input.shape
+	print np.shape(Input)
 	# print('prediction', clf.predict (Input))
 	return clf.predict(Input)
 	# print(y_test)
