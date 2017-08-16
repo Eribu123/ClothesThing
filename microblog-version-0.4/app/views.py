@@ -11,6 +11,12 @@ from PIL import Image
 UPLOAD_FOLDER = './uploads'
 ALLOWED_EXTENSIONS = set(['txt', 'pdf', 'png', 'jpg', 'jpeg', 'gif'])
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
+@app.route('/get',methods= ['POST']):
+    def getRoute():
+        username=request.form['username']
+        path=request.form['fpath']+'/'+request.form['fname']
+        print(username, path)
+        DT.InputData(username,path,SepAl.classify(path))
 
 def install_secret_key(app, filename='secret_key'):
     filename = os.path.join(app.instance_path, filename)
@@ -31,10 +37,7 @@ def allowed_file(filename):
 @app.route('/upload', methods=['GET', 'POST'])
 def upload_file():
     if request.method == 'POST':
-        username=request.form['username']
-        path=request.form['fpath']+'/'+request.form['fname']
-        print(username, path)
-        DT.InputData(username,path,SepAl.classify(path))
+       
         # check if the post request has the file part
         print (request.files)
         if 'file' not in request.files:
@@ -55,9 +58,13 @@ def upload_file():
     <!doctype html>
     <title>Upload new File</title>
     <h1>Upload new File</h1>
+    <h3>give us a UsrName</h3>
     <form method=post enctype=multipart/form-data>
         <p><input type=file name=file>
             <input type=submit value=Upload>
+    <form>
+  Name: <input type="text" name="name" id="name" value="" />
+    <input type="submit" value="submit" />
     </form>
     '''
 
