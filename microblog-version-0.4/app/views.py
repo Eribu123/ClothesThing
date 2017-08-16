@@ -33,7 +33,7 @@ def upload_file():
     if request.method == 'POST':
         username=str(request.form['username'])
         path=str(request.form['fpath']+'/'+request.form['fname'])
-        path=os.rename(os.path.join(request.form['fpath']+'/', request.form['fname']), os.path.join(request.form['fpath'], '/'+request.form['fname']+username))
+        path=os.rename(path, os.path.join(request.form['fpath'], '/'+request.form['fname']+username))
         print(username, path)
         DT.InputData(username,path,SepAl.classify(path))
         # check if the post request has the file part
