@@ -9,7 +9,7 @@ import warnings
 # warnings.filterwarnings("ignore", category=DeprecationWarning) 
 # print 'asodfausdfaiosudhfuoasdhfuisdahuilasdfhui'
 conn=sqlite3.connect('DataBase123.db')
-sqlite3.connect(":memory:", check_same_thread=False)
+sqlite3.connect(":memory:", check_same_thread=True)
 
 c=conn.cursor()
 # numberToIncrement = 0ResizedShirts ResizedPants
