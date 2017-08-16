@@ -100,14 +100,14 @@ def login():
                            providers=app.config['OPENID_PROVIDERS'])
 @app.route('/data', methods=['GET', 'POST', 'PUT', 'PATCH', 'DELETE'])
 def test():
-    DT.DataTracking.InputData('ex1','/Users/kyle/Desktop/image1.jpeg',SepAl.classify(Image.open('/Users/kyle/Desktop/image1.jpeg')))
+    DT.InputData('ex1','/Users/kyle/Desktop/image1.jpeg',SepAl.classify(Image.open('/Users/kyle/Desktop/image1.jpeg')))
 
 @app.route('/get', methods=['POST'])
 def get():
     username=request.form['username']
     path=request.form['fpath']+'/'+request.form['fname']
     print(username, path)
-    #DT.DataTracking.InputData(username,path,SepAl.classify(Image.open(path))[0])
+    DT.InputData(username,path,SepAl.classify(Image.open(path))[0])
 
     
 
