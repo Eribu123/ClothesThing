@@ -6,8 +6,8 @@ import SeperationAL as SepAl
 import time
 from PIL import Image
 import warnings
-warnings.filterwarnings("ignore", category=DeprecationWarning) 
-
+# warnings.filterwarnings("ignore", category=DeprecationWarning) 
+# print 'asodfausdfaiosudhfuoasdhfuisdahuilasdfhui'
 conn=sqlite3.connect('DataBase.db')
 c=conn.cursor()
 # numberToIncrement = 0ResizedShirts ResizedPants
