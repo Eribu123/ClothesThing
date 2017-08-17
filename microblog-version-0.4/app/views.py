@@ -93,10 +93,16 @@ def GiveShirts():
     username = request.form['username']
     return DT.GetAllDataForThisInput(username,1)
 
-@app.route('/closets/allClothes/', methods=['GET'])
+@app.route('/closets/allClothes/', methods=['GET', 'POST'])
 def Givall():
-    username = request.form['username']
-    return DT.GetAllData(username)
+    if request.method=='POST':
+        username = request.form['username']
+        users DT.GetAllData(username)
+
+        return <h1> hi</h1>
+    else:
+        return <h1> hi</h1>
+
 
 
 
