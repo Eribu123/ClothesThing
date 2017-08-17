@@ -53,7 +53,7 @@ def AddToUserInputData(ThisUser,Uinput,Utype): #These are what were going to be 
 	x=0
 	z=0
 	for row in c.fetchall():
-		print row
+		print 'dsfsafasdfsdfasdfsd',row
 		x+=1
 		print 'x',x
 		# print '\n',row[0],ThisUser,'\n'
