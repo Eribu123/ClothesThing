@@ -53,7 +53,7 @@ def upload_file():
             return redirect(request.url)
         elif file and allowed_file(file.filename):
             aFileName= filename = secure_filename(file.filename)
-           afile= file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
+            afile= file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
             print 'oijadsfoiasdfioasdiopfasdiofjs'
             # return redirect(url_for('uploaded_file', filename=filename))
 
