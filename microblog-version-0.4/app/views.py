@@ -103,7 +103,7 @@ def Givall():
         return 12345
 
     else:
-        return DT.GetAllData('Arieh')
+        return DT.GetAllData(request.form['username'])
 
 
 
