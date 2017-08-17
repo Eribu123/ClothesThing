@@ -83,17 +83,17 @@ def upload_file():
     </form>
     '''
 # @app.route('/closets/pants/<UserName>')
-@app.route('/closets/pants/', methods=['Get'])
+@app.route('/closets/pants/', methods=['GET'])
 def GivePants():
     username = request.form['username']
     return DT.GetAllDataForThisInput(username,0)
 
-@app.route('/closets/shirts/', methods=['Get'])
+@app.route('/closets/shirts/', methods=['GET'])
 def GiveShirts():
     username = request.form['username']
     return DT.GetAllDataForThisInput(username,1)
 
-@app.route('/closets/allClothes/', methods=['Get'])
+@app.route('/closets/allClothes/', methods=['GET'])
 def Givall():
     username = request.form['username']
     return DT.GetAllData(username)
