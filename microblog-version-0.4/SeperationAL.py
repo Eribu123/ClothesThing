@@ -190,7 +190,7 @@ def SaveClassifer(path):
 	with open(path, 'wb+') as fid:
 		pickle.dump(CreateClassifer(grayPathShirt,grayPathPants), fid)
 
-SaveClassifer('classifer1.pkl')
+# SaveClassifer('classifer1.pkl')
 def classify(Input):
 	with open (pathToClassifer,'rb') as fid:
 		clf=pickle.load(fid)
