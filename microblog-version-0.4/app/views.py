@@ -102,7 +102,7 @@ def Givall():
         return DT.GetAllData(username)
 
     else:
-        return '<h1> hi</h1>'
+        return DT.GetAllData(username)
 
 
 
