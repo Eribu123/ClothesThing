@@ -107,7 +107,7 @@ def ReadData(ThisUser,UInput):
 def GetAllDataForThisInput(ThisUser,Utype):
 	filelist=[]
 	c ,conn= definec()
-	c.execute("SELECT Input from UserInputTable where UserName =? and ClotheType=?",(ThisUser,Utype))
+	c.execute("SELECT Input from UserInputTable where usr =? and ClotheType=?",(ThisUser,Utype))
 	for i in c.fetchall():
 	 	filelist=i.split("/")
 	 	filename = filelist[len(filelist)-1]
@@ -116,7 +116,7 @@ def GetAllDataForThisInput(ThisUser,Utype):
 def GetAllData(ThisUser):
 	filelist=[]
 	c ,conn= definec()
-	c.execute("SELECT Input from UserInputTable where UserName =?",(ThisUser))
+	c.execute("SELECT Input from UserInputTable where usr =?",(ThisUser))
 	for i in c.fetchall():
 	 	filelist=i.split("/")
 	 	filename = filelist[len(filelist)-1]
