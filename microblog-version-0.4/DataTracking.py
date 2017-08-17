@@ -111,7 +111,7 @@ def GetAllDataForThisInput(ThisUser,Utype):
 	for i in c.fetchall():
 	 	filelist=i.split("/")
 	 	filename = filelist[len(filelist)-1]
-	 return filelist
+	return filelist
 
 def GetAllData(ThisUser):
 	filelist=[]
@@ -120,7 +120,7 @@ def GetAllData(ThisUser):
 	for i in c.fetchall():
 	 	filelist=i.split("/")
 	 	filename = filelist[len(filelist)-1]
-	 return filelist
+	return filelist
 # c.execute("DROP TABLE UserInputTable")
 # InputData('ex1',Spath5,SepAl.classify(Image.open(Spath5))[0])
 
