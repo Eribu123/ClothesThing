@@ -97,11 +97,12 @@ def GiveShirts():
 def Givall():
     if request.method=='POST':
         username = request.form['username']
-        users=DT.GetAllData(username)
+        # users=DT.GetAllData(username)
 
-        return users
+        return DT.GetAllData(username)
+
     else:
-        return users
+        return '<h1> hi</h1>'
 
 
 
