@@ -82,17 +82,21 @@ def upload_file():
     <input type="submit" value="submit" />
     </form>
     '''
-@app.route('/closets/pants/<UserName>')
-def GivePants(UserName):
-    return DT.GetAllDataForThisInput(UserName,0)
+# @app.route('/closets/pants/<UserName>')
+@app.route('/closets/pants/', methods=['Get'])
+def GivePants():
+    username = request.form[‘username’]
+    return DT.GetAllDataForThisInput(username,0)
 
-@app.route('/closets/shirts/<UserName>')
-def GiveShirts(UserName):
-    return DT.GetAllDataForThisInput(UserName,1)
+@app.route('/closets/shirts/', methods=['Get'])
+def GiveShirts():
+    username = request.form[‘username’]
+    return DT.GetAllDataForThisInput(username,0)
 
-@app.route('/closets/allClothes/<UserName>')
-def GiveAll(UserName):
-    return DT.GetAllData(username)
+@app.route('/closets/allClothes/', methods=['Get'])
+def Givall():
+    username = request.form[‘username’]
+    return DT.GetAllDataForThisInput(username,0)
 
 
 
