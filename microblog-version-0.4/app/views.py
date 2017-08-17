@@ -64,7 +64,7 @@ def upload_file():
         print 'o'
         
         print(username, uPath)
-        DT.InputData(username,'uPath',0)
+        # DT.InputData(username,uPath,0)
     return '''
     <!doctype html>
     <title>Upload new File</title>
