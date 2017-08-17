@@ -79,7 +79,6 @@ def upload_file():
     </form>
     <form>
   UserName: <input type="text" name="name" id="name" value="" />
-    {{Dt.InputData}}
     <input type="submit" value="submit" />
     </form>
     '''
