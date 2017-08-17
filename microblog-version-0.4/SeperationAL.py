@@ -194,7 +194,7 @@ def SaveClassifer(path):
 def classify(Input):
 	with open (pathToClassifer,'rb') as fid:
 		clf=pickle.load(fid)
-	Input = Image.open(Input)
+	# Input = Image.open(Input)
 	Input=ImageOps.grayscale(Input)
 	Input = StandarizeImage(Input)
 	# print np.shape(Input)
@@ -209,6 +209,7 @@ def classify(Input):
 
 def Score(Input):
 	# Input = StandarizeImage(Input)
+	Input = Image.open(Input)
 	itemIs=classify(Input)
 	colorsAre=Cluster(Input)
 	# print 'scoring',itemIs, colorsAre
