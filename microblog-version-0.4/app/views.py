@@ -99,9 +99,9 @@ def Givall():
         username = request.form['username']
         users=DT.GetAllData(username)
 
-        return <h1> hi</h1>
+        return '<h1> hi</h1>'
     else:
-        return <h1> hi</h1>
+        return '<h1> hi</h1>'
 
 
 
