@@ -85,18 +85,18 @@ def upload_file():
 # @app.route('/closets/pants/<UserName>')
 @app.route('/closets/pants/', methods=['Get'])
 def GivePants():
-    username = request.form[‘username’]
+    username = request.form['username']
     return DT.GetAllDataForThisInput(username,0)
 
 @app.route('/closets/shirts/', methods=['Get'])
 def GiveShirts():
-    username = request.form[‘username’]
-    return DT.GetAllDataForThisInput(username,0)
+    username = request.form['username']
+    return DT.GetAllDataForThisInput(username,1)
 
 @app.route('/closets/allClothes/', methods=['Get'])
 def Givall():
-    username = request.form[‘username’]
-    return DT.GetAllDataForThisInput(username,0)
+    username = request.form['username']
+    return DT.GetAllData(username)
 
 
 
