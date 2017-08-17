@@ -96,13 +96,14 @@ def GiveShirts():
 @app.route('/closets/allClothes/', methods=['GET', 'POST'])
 def Givall():
     if request.method=='POST':
-        username = request.form['username']
+        # user
+        # username = 
         # users=DT.GetAllData(username)
 
-        return DT.GetAllData(username)
+        return DT.GetAllData(request.form['username'])
 
     else:
-        return DT.GetAllData(username)
+        return DT.GetAllData(request.form['username'])
 
 
 
