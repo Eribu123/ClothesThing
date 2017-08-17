@@ -47,7 +47,11 @@ def AddToUserInputData(ThisUser,Uinput,Utype): #These are what were going to be 
 	
 	c.execute("CREATE TABLE IF NOT EXISTS ScoreTable(id Integer PRIMARY KEY, UserName Text, Input1 Text, Input2 Text ,Score Integer)" )
 
+	c.execute("SELECT usr from UserInputTable where usr=(?)", (ThisUser,))
+	print c.fetchall()
 	c.execute("SELECT Input from UserInputTable where usr=(?)", (ThisUser,))
+
+
 	pantsType=[]
 	shirtsType=[]
 	x=0

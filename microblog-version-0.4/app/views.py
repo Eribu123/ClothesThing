@@ -60,11 +60,11 @@ def upload_file():
         print 'oijadsfoiasdfioasdiopfasdiofjs'
         time.sleep(2)
         username=request.form['username']
-        uPath="/home/ubuntu/ClothesThing/microblog-version-0.4/uploads/"+request.form['fname']
+        path="/home/ubuntu/ClothesThing/microblog-version-0.4/uploads/"+request.form['fname']
         print 'o'
         
-        print(username, uPath)
-        DT.InputData(username,uPath,0)
+        print(username, path)
+        DT.InputData(username,''path,SepAl.classify(Image.open(path))[0])
     return '''
     <!doctype html>
     <title>Upload new File</title>
