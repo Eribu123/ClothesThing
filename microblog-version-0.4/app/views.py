@@ -100,7 +100,7 @@ def Givall():
         # username = 
         # users=DT.GetAllData(username)
 
-        return DT.GetAllData(request.form['username'])
+        return 12345
 
     else:
         return DT.GetAllData(request.form['username'])
