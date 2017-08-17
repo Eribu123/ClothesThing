@@ -101,10 +101,26 @@ def ReadData(ThisUser,UInput):
 	c.execute("SELECT UserName, Input1, Input2, Score from ScoreTable where  UserName =? and  Input1 =? or Input2=?", (ThisUser,UInput,UInput))
 	for i in c.fetchall():
 		print i
-	c.execute("SELECT id from UserInputTable where UserName =? and  Input=? ")(ThisUser,UInput)
+	c.execute("SELECT id from UserInputTable where UserName =? and  Input=?",(ThisUser,UInput))
 	return c.fetchone()
 	conn.close()
+def GetAllDataForThisInput(ThisUser,Utype):
+	filelist=[]
+	c ,conn= definec()
+	c.execute("SELECT Input from UserInputTable where UserName =? and ClotheType=?",(ThisUser,Utype))
+	for i in c.fetchall():
+	 	filelist=i.split("/")
+	 	filename = filelist[len(filelist)-1]
+	 return filelist
 
+def GetAllData(ThisUser):
+	filelist=[]
+	c ,conn= definec()
+	c.execute("SELECT Input from UserInputTable where UserName =?",(ThisUser))
+	for i in c.fetchall():
+	 	filelist=i.split("/")
+	 	filename = filelist[len(filelist)-1]
+	 return filelist
 # c.execute("DROP TABLE UserInputTable")
 # InputData('ex1',Spath5,SepAl.classify(Image.open(Spath5))[0])
 

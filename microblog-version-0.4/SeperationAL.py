@@ -25,8 +25,8 @@ testPath = shirtPath+'ResizedShirts/' +'Apic_016.jpg'
 
 clothesPath='../../clothes/'
 pantsPath='../../clothes/pants/'
-grayPathShirt=shirtPath+"ResizedShirts/GrayShirts/"
-grayPathPants=pantsPath+"ResizedPants/GrayPants/"
+grayPathShirt='/Users/Aubrey/Desktop/clothes/Shirts/ResizedShirts/GrayShirts/'
+grayPathPants='/Users/Aubrey/Desktop/clothes/pants/ResizedPants/GrayPants/'
 # desktop='../../'
 numericData=[]
 p=[]
@@ -185,12 +185,12 @@ def Cluster(Input):
 
 	return theColors
 
-pathToClassifer='classifier.pkl'
+pathToClassifer='classifier1.pkl'
 def SaveClassifer(path):
 	with open(path, 'wb+') as fid:
 		pickle.dump(CreateClassifer(grayPathShirt,grayPathPants), fid)
 
-# SaveClassifer(pathToClassifer)
+SaveClassifer('classifer1.pkl')
 def classify(Input):
 	with open (pathToClassifer,'rb') as fid:
 		clf=pickle.load(fid)

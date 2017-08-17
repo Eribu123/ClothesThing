@@ -16,6 +16,8 @@ app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 def getRoute():
     pass
 aFileName=''
+username=''
+path=''
 afile=None
 
 def install_secret_key(app, filename='secret_key'):
@@ -76,10 +78,24 @@ def upload_file():
             <input type=submit value=Upload>
     </form>
     <form>
-  Name: <input type="text" name="name" id="name" value="" />
+  UserName: <input type="text" name="name" id="name" value="" />
+    {{Dt.InputData}}
     <input type="submit" value="submit" />
     </form>
     '''
+@app.route('/closets/pants/<UserName>')
+def GivePants(UserName):
+    return DT.GetAllDataForThisInput(UserName,0)
+
+@app.route('/closets/shirts/<UserName>')
+def GiveShirts(UserName):
+    return DT.GetAllDataForThisInput(UserName,1)
+
+@app.route('/closets/allClothes/<UserName>')
+def GiveAll(UserName):
+    return DT.GetAllData(username)
+
+
 
 @app.route('/uploads/<filename>')
 def uploaded_file(filename):
