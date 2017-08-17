@@ -87,8 +87,9 @@ def AddToUserInputData(ThisUser,Uinput,Utype): #These are what were going to be 
 
 
 def InputData(user,Input,Utype):
-	AddToUserInputData(user,Input,Utype)
 	print 'dsfsdfsdfsd'
+	
+	AddToUserInputData(user,Input,Utype)
 
 def ReadData(ThisUser,UInput):
 	c ,conn= definec()
