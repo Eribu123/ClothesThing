@@ -53,6 +53,7 @@ def AddToUserInputData(ThisUser,Uinput,Utype): #These are what were going to be 
 	x=0
 	z=0
 	for row in c.fetchall():
+		print row
 		x+=1
 		print 'x',x
 		# print '\n',row[0],ThisUser,'\n'
@@ -88,7 +89,7 @@ def AddToUserInputData(ThisUser,Uinput,Utype): #These are what were going to be 
 
 def InputData(user,Input,Utype):
 	print 'dsfsdfsdfsd'
-	
+
 	AddToUserInputData(user,Input,Utype)
 
 def ReadData(ThisUser,UInput):
