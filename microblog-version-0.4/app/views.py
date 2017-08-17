@@ -16,8 +16,8 @@ app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 def getRoute():
     pass
 aFileName=''
-username=''
-path=''
+# username=''
+# path=''
 afile=None
 
 def install_secret_key(app, filename='secret_key'):
