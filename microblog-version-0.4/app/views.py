@@ -14,7 +14,8 @@ ALLOWED_EXTENSIONS = set(['txt', 'pdf', 'png', 'jpg', 'jpeg', 'gif'])
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 @app.route('/get',methods= ['POST'])
 # def getRoute():
-    
+aFileName=''
+afile=None
 
 def install_secret_key(app, filename='secret_key'):
     filename = os.path.join(app.instance_path, filename)
@@ -50,8 +51,8 @@ def upload_file():
             flash('No selected file')
             return redirect(request.url)
         elif file and allowed_file(file.filename):
-            filename = secure_filename(file.filename)
-            file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
+            aFileName= filename = secure_filename(file.filename)
+           afile= file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
             print 'oijadsfoiasdfioasdiopfasdiofjs'
             # return redirect(url_for('uploaded_file', filename=filename))
 
